@@ -1,0 +1,28 @@
+<!ELEMENT University (Fakulty)>
+<!ATTLIST  University 
+name CDATA #REQUIRED
+phone CDATA #REQUIRED
+street CDATA #REQUIRED>
+
+<!ELEMENT Fakulty (Department)>
+<!ATTLIST  Fakulty 
+name CDATA #REQUIRED>
+
+<!ELEMENT Department (Group, Group2)>
+<!ATTLIST Department
+name CDATA #REQUIRED>
+
+<!ELEMENT Group (student+)>
+<!ATTLIST  Group 
+name CDATA #REQUIRED>
+
+<!ELEMENT Group2 (student+)>
+<!ATTLIST  Group2 
+name CDATA #REQUIRED>
+
+<!ELEMENT student (#PCDATA)>
+
+
+
+
+
