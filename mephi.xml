@@ -1,17 +1,19 @@
 <?xml version="1.0"?>
 <!DOCTYPE University SYSTEM "mephi.dtd">
-<University name="Mephi" phone ="34-55-66" street="Moskvorechie">
+<University xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="mephi.xsd"
+            name="Mephi" phone ="34-55-66" street="Moskvorechie">
 
-   <Fakulty name="cybernetics">
+   <Faculty name="cybernetics">
       <Department name="Invormation systems and technologies">
          <Group name="K5-361">
              <student> Anisimova Natasha</student>
                <student> Artemev Dmitriy</student>
            </Group>
-              <Group2 name="K5-362">
+              <Group name="K5-362">
                <student> Erohin Vladimir</student>
                <student> dasha</student>
-           </Group2>
+           </Group>
           </Department>
-    </Fakulty>
+    </Faculty>
 </University>

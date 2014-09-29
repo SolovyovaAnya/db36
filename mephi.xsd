@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:simpleType name="facult_data">
+  <xs:restriction base="xs:string">
+  <xs:enumeration value="cybernetics" />
+  <xs:enumeration value="Physics" />
+  <xs:enumeration value="Automatics" />
+  <xs:enumeration value="Management" />
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="kaf_data">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Invormation systems and technologies" />
+<xs:enumeration value="Prigramming engineering" />
+<xs:enumeration value="Math" />
+<xs:enumeration value="System analization" />
+</xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="human">
+<xs:restriction base="xs:string">
+<xs:pattern value="[А-Я]{1}([а-я])* [А-Я]{1}([а-я])*"/>
+</xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="student">
+<xs:simpleContent>
+<xs:extension base="human">
+</xs:extension>
+</xs:simpleContent>
+</xs:complexType>
+
+<xs:element name="University" type="Institut"/>
+  <xs:complexType name="Institut">
+    <xs:sequence>
+      <xs:element name="Faculty">
+        <xs:complexType>
+          <xs:sequence>
+             <xs:element name="Department">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Group" maxOccurs="25" minOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="student" maxOccurs="25" minOccurs="1">
+                        </xs:element>
+                      </xs:sequence>
+                     <xs:attribute name="name" type="xs:string" use="required"/>
+                   </xs:complexType>
+                 </xs:element>
+                </xs:sequence>
+               <xs:attribute name="name" type="kaf_data"/>
+              </xs:complexType>
+             </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="facult_data"/>
+           </xs:complexType>
+          </xs:element>
+         </xs:sequence>
+         <xs:attribute name="name" type="xs:string"/>
+         <xs:attribute name="phone" type="xs:string"/>
+         <xs:attribute name="street" type="xs:string"/>
+       </xs:complexType>
+</xs:schema>
